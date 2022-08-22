@@ -3,9 +3,6 @@
 // define a variable and place into it the http package (shared code) from node.js
 let myhttp = require("http");
 
-// use dot notation in javascript to access an object and its methods (commands) and properties
-// createServer() takes some arguments to make it provide a useful http server
-// 1: function (block of code) that will be run whenever the server receives an http request
 
 let myserver = myhttp.createServer( 
   // createServer() uses our function to run when a request comes in
@@ -13,13 +10,8 @@ let myserver = myhttp.createServer(
     console.log( myrequest.url );
 
     let mytext;
-    if ( myrequest.url === "/hey" ) {
-      mytext = "Well hello there...";
-    } else {
-      mytext = "I don't know you!";
-    }
 
-    mytext = mytext + " - Please help me... I am trapped in a Node.js server!";
+    mytext = "Hello World"
 
     // writeHead() creates an http response header, including the status code (200 OK), the content type
     myresponse.writeHead( 200, { "Content-Type": "text/plain" } );
